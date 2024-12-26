@@ -1,0 +1,10 @@
+26.12.2024:  dds_simple_03.py
+added switchoff for outputs: outzero()
+added time.sleep(0.1)  for very low frequencies in stop()
+-> now works down to 1Hz (and after that up again)
+
+
+21.12.2024 dds_simple_03.py
+added: ask_f()
+
+20.12.2024	dds_simple_02.py
