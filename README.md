@@ -10,7 +10,7 @@ https://staff.ltam.lu/feljc/electronics/uPython/PIO_DDS.pdf
 
 There is a small PC software now to control the generator:
 
-[awg_v.mp4](https://github.com/jean-claudeF/ArbitraryWaveformGenerator/blob/main/awg_v.mp4)
+https://github.com/jean-claudeF/ArbitraryWaveformGenerator/blob/main/awg_v.mp4
 
 Again I find the small Pico programmed in Micropython is a very useful piece of hardware.
 It has some big advantages over Arduino, for example:
