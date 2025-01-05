@@ -19,5 +19,8 @@ It has some big advantages over Arduino, for example:
 
 So, writing a rudimentary PC software was not a big deal, see Python folder.
 
+tk_awg_04.py now includes setting frequency according to musical intervals.
+
+
 
 
