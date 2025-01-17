@@ -115,10 +115,11 @@ def ask_f_and_mode():
     return f
 ```
 
+## tk_awg_xx
 
 
 
-### Formula plotter
+## Formula plotter
 The formula plotter allows you to enter a formula, see the graph (normalised to one period and byte values 0...255) as needed by the AWG.
 
 ![Picture](formula_plotter.png)
