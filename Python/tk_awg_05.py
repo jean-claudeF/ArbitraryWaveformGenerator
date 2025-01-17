@@ -9,6 +9,11 @@ from buttonbar import Buttonbar
 from formula_plotter_05 import FormulaPlotter
 from picoconnect_pa03 import create_pico_dictionary, Pico, CMD_TEST
 
+
+from music_02 import *
+from functools import partial
+from radiobar import Radiobar
+
 #---------------------------------------------------------------------- 
 # GLOBAL VARIABLES:
 
@@ -141,10 +146,6 @@ def read_awg():
     
 #-------------------------------------------------------------
 # Musical intervals
-from music_02 import *
-
-from functools import partial
-from radiobar import Radiobar
     
 def handle_interval(semitones):
     print(semitones, " semitones")
