@@ -123,6 +123,54 @@ The formula plotter allows you to enter a formula, see the graph (normalised to 
 
 ![Picture](formula_plotter.png)
 
+Let's first have a look at some utility functions:
+
+``` python
+def calculate_y(x, n, function):
+    y = empty(n, dtype=float)
+    s = f"y[:] = {function}"
+    exec(s)
+    return y
+
+def normalize(y):
+    maxy = max(max(y), abs(min(y)))
+    return y / maxy
+
+def normalize_to_bytes(y):
+    return ((y * 127) + 127).astype(int)
+
+def calc_xy(n, function):
+    x = linspace(0.0, 1.0, n)
+    y = calculate_y(x, n, function)
+    return x, y
+    
+def calc_awg(n, function):
+    # returns py string s 
+    # contains function = ..., N=... and y=[....] (byte values), 
+    # and x, y values
+    x, y = calc_xy(n, function)
+    y1 = normalize(y)
+    yb = normalize_to_bytes(y1)
+    yv = array(yb, dtype = uint8)
+    yv = yv.tolist()
+    x = x.tolist()
+    s = "function = '" + function + "'\n"
+    s += "N = " + str(n) + "\nvalues = " + str(yv)
+
+    return s, x, yv    
+```
+The main function is calc_awg(n, function).
+This calculates a list of x and a list of y values for a given function, and returns a string s that can be used to write an awgvalues.py file.
+The x range is fixed to 0...1, corresponding to 1 period.
+There are some parts of these functions that were a little tricky (for me!) and cost me some time to get ready.
+Here they are:
+- In calculate_y we first create an empty numpy array of type float. This can then be used in an exec statement to put in the y values.
+The trick here is to use y[:] = instead of simply putting  y = ...
+- In calc_awg, The y values are first converted to integer (byte) values uint8. Then this numpy array is converted to a list. And this list is used in the string s, so it can be written to the awgvalues.py file.
+
+
+
+
 
 
 
