@@ -116,7 +116,16 @@ def ask_f_and_mode():
 ```
 
 ## tk_awg_xx
+![Picture](tk_awg_05.png)
+The software tk_awg_xx allows you to set the curve form and the frequency (buttons SINE, RECT, ...) 
 
+- AWGDEMO shows a predefined signal.
+
+- AWGNEW calls a formulaplotter with which you can define a curve by entering a formula.
+
+- AWGLAST sets the curve defined before with the formula plotter.
+
+- On the right side the frequency can be set up and down in musical intervals
 
 
 ## Formula plotter
