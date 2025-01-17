@@ -169,6 +169,24 @@ The trick here is to use y[:] = instead of simply putting  y = ...
 - In calc_awg, The y values are first converted to integer (byte) values uint8. Then this numpy array is converted to a list. And this list is used in the string s, so it can be written to the awgvalues.py file.
 
 
+The rest is defining a toplevel window in tkinter. We must define a callback function to transfer the values to the calling program.
+The formula can then be started from the main program tk_awg_xx like this:
+
+```python
+ def open_plotter(self):
+        self.withdraw()
+        fp = FormulaPlotter(self, on_plot_callback=handle_plot_data, n = 4096)
+
+ def handle_plot_data( x, y, function):
+    print("Received plot data from FormulaPlotter.")
+    #...
+    s = "function = '" + function + "'"
+    s += "\nN = " + str(N)
+    s += "\nvalues = " + str(y) + '\n'
+    mypico.write_big_file(AWGFILE, s,1000)
+    set_N()
+    set_mode("awg_new()")
+```
 
 
 
