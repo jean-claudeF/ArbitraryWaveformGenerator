@@ -119,7 +119,9 @@ def ask_f_and_mode():
 
 ![Picture](tk_awg_05.png)
 
-The software tk_awg_xx allows you to set the curve form and the frequency (buttons SINE, RECT, ...) 
+The software tk_awg_xx allows you to control the AWG  from the PC.
+
+- buttons SINE, RECT, ... and text field frequency set the curve form and the frequency () 
 
 - AWGDEMO shows a predefined signal.
 
